@@ -9,7 +9,7 @@
 ## Installation
 
 ```
-pip install git+https://github.com/kojix2/seaborn-command
+pip install seaborn-command
 ```
 
 ## Usage
@@ -59,4 +59,9 @@ Note: SVG images may not be displayed correctly.
 
 ## Contributing
 
+* Try this command!
 * Pull requests are welcome!
+
+## LICENSE
+
+MIT
