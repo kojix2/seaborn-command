@@ -4,24 +4,24 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn
 
+
 def parse_seaborn_args(args):
     seaborn_args = {}
     for arg in args:
-        if arg.startswith('--'):
+        if arg.startswith("--"):
             opt = arg[2:]
         else:
             seaborn_args[opt] = arg
     return seaborn_args
 
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("plot", help="subcommand")
-    parser.add_argument("-d", "--delimiter", help="delimiter", default='\t')
-    parser.add_argument(
-        "--format", help="outout image file format", default='svg')
-    parser.add_argument("--show", help="call plt.show()", action='store_true')
-    parser.add_argument(
-        "--debug", help="print seaborn args", action='store_true')
+    parser.add_argument("-d", "--delimiter", help="delimiter", default="\t")
+    parser.add_argument("--format", help="outout image file format", default="svg")
+    parser.add_argument("--show", help="call plt.show()", action="store_true")
+    parser.add_argument("--debug", help="print seaborn args", action="store_true")
     args, unknown_args = parser.parse_known_args()
 
     seaborn_args = parse_seaborn_args(unknown_args)

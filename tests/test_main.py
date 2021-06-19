@@ -1,6 +1,7 @@
 import unittest
 import seaborn_command.main
 
+
 class TestMain(unittest.TestCase):
     # @classmethod
     # def setUpClass(cls):
@@ -21,9 +22,10 @@ class TestMain(unittest.TestCase):
     #     pass
 
     def test_parse_seaborn_args(self):
-        expected = {'hue': 'species'}
-        actual = seaborn_command.main.parse_seaborn_args(['--hue', 'species'])
+        expected = {"hue": "species"}
+        actual = seaborn_command.main.parse_seaborn_args(["--hue", "species"])
         self.assertEqual(expected, actual)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     unittest.main()
