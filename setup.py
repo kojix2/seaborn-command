@@ -11,7 +11,7 @@ setup(
     long_description=read('README.md'),
     author='kojix2',
     author_email='2xijok@gmail.com',
-    install_requires=['seaborn', 'pandas'],
+    install_requires=read('requirements.txt').strip().split('\n'),
     entry_points={
         'console_scripts': ['sns=sns.main:main', 'seaborn=sns.main:main'],
     },
