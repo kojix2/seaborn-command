@@ -1,6 +1,6 @@
-# sns: seaborn as a command line tool
+# seaborn-command
 
-[![CI](https://github.com/kojix2/sns/actions/workflows/ci.yaml/badge.svg)](https://github.com/kojix2/sns/actions/workflows/ci.yaml)
+[![CI](https://github.com/kojix2/seaborn-command/actions/workflows/ci.yaml/badge.svg)](https://github.com/kojix2/seaborn-command/actions/workflows/ci.yaml)
 
 :ocean: [seaborn](https://github.com/mwaskom/seaborn) as a command line tool
 
@@ -9,7 +9,7 @@
 ## Installation
 
 ```
-pip install git+https://github.com/kojix2/sns
+pip install git+https://github.com/kojix2/seaborn-command
 ```
 
 ## Usage

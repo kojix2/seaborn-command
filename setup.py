@@ -5,7 +5,7 @@ def read(path):
         return f.read()
 
 setup(
-    name='sns',
+    name='seaborn-command',
     version='0.0.1',
     description='seaborn command line tool',
     long_description=read('README.md'),
@@ -13,9 +13,9 @@ setup(
     author_email='2xijok@gmail.com',
     install_requires=read('requirements.txt').strip().split('\n'),
     entry_points={
-        'console_scripts': ['sns=sns.main:main', 'seaborn=sns.main:main'],
+        'console_scripts': ['seaborn=seaborn_command.main:main'],
     },
-    url='https://github.com/kojix2/sns',
+    url='https://github.com/kojix2/seaborn-command',
     license=read('LICENSE'),
     packages=find_packages(exclude=('tests', 'docs'))
 )
