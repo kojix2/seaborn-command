@@ -4,12 +4,16 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("plot", help="subcommand")
     parser.add_argument("-d", "--delimiter", help="delimiter", default='\t')
-    parser.add_argument("--format", help="outout image file format")
+    parser.add_argument(
+        "--format", help="outout image file format", default='svg')
     parser.add_argument("--show", help="call plt.show()", action='store_true')
+    parser.add_argument(
+        "--debug", help="print seaborn args", action='store_true')
     args, unknown_args = parser.parse_known_args()
 
     seaborn_args = {}
@@ -19,11 +23,13 @@ def main():
         else:
             seaborn_args[opt] = arg
 
-    print(seaborn_args)
+    if args.debug:
+        print(seaborn_args)
+
     df = pd.read_csv(sys.stdin, sep=args.delimiter)
-    getattr(sns, args.plot)(df, **seaborn_args)
+    getattr(sns, args.plot)(data=df, **seaborn_args)
 
     if args.show:
-      plt.show()
+        plt.show()
     else:
-      plt.savefig(sys.stdout.buffer, format=args.format)
+        plt.savefig(sys.stdout.buffer, format=args.format)

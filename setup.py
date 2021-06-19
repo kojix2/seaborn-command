@@ -13,9 +13,9 @@ setup(
     author_email='2xijok@gmail.com',
     install_requires=['seaborn', 'pandas'],
     entry_points={
-        'console_scripts': ['sns=sns.main:main'],
+        'console_scripts': ['sns=sns.main:main', 'seaborn=sns.main:main'],
     },
     url='https://github.com/kojix2/sns',
-    license=license,
+    license=read('LICENSE'),
     packages=find_packages(exclude=('tests', 'docs'))
 )
