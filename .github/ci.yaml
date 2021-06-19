@@ -1,0 +1,16 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  build:
+    name: ${{ matrix.os }} Ruby ${{ matrix.python }}
+    runs-on: ${{ matrix.os }}-latest
+    strategy:
+      matrix:
+        os:   ['ubuntu', 'macos']
+        ruby: ['3.7', '3.8', '3.9']
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install --upgrade pip
