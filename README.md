@@ -1,5 +1,6 @@
 # seaborn-command
 
+[![PyPI Version](https://img.shields.io/pypi/v/seaborn-command.svg)](https://pypi.org/project/seaborn-command/)
 [![CI](https://github.com/kojix2/seaborn-command/actions/workflows/ci.yaml/badge.svg)](https://github.com/kojix2/seaborn-command/actions/workflows/ci.yaml)
 
 :ocean: [seaborn](https://github.com/mwaskom/seaborn) as a command line tool
