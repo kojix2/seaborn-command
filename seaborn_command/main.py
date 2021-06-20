@@ -29,7 +29,6 @@ def main():
     parser.add_argument("-H", "--header", nargs='?', help="input has a header row", type=int, const=0)
     parser.add_argument("-T", "--transpose", action="store_true")
     parser.add_argument("--format", help="outout image file format", default="svg")
-    parser.add_argument("--show", help="call plt.show()", action="store_true")
     parser.add_argument("--debug", help="print seaborn args", action="store_true")
     args, unknown_args = parser.parse_known_args()
 
@@ -53,7 +52,7 @@ def main():
 
     getattr(seaborn, args.plot)(data=df, **seaborn_args)
 
-    if args.show:
+    if sys.stdout.isatty():
         plt.show()
     else:
         plt.savefig(sys.stdout.buffer, format=args.format)

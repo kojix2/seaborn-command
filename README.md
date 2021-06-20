@@ -22,25 +22,30 @@ seaborn <command> [options]
 Basic usage
 
 ```
-cat iris.tsv | seaborn pairplot --hue species --show
+cat iris.tsv | seaborn pairplot --hue species
 ```
 
 Input csv file
 
 ```
-cat iris.csv | seaborn pairplot -H -d, --hue species --show
+cat iris.csv | seaborn pairplot -H -d, --hue species
 ```
 
-Save image to a file
+Save svg image to a file
 
 ```
-cat iris.tsv | seaborn pairplot --hue species --format png > result.png
+cat iris.tsv | seaborn pairplot --hue species > result.svg
+```
+
+Show png image with ImageMagick
+
+```
+cat iris.tsv | seaborn pairplot --hue species --format png | display
 ```
 
 * common options
   * `-d` : delimiter (default tab)
   * `-t` : transpose
-  * `--show` : show the GUI window. No output to STDOUT.
   * `--format` : output format of the image (default svg)
 
 ### Tips
@@ -51,13 +56,15 @@ Setting alias
 alias sns="seaborn"
 ```
 
-Display with ImageMagick
+[viu](https://github.com/atanunq/viu) command. 
 
 ```
-cat iris.tsv | seaborn pairplot --hue species --format png | display
+cat iris.tsv | seaborn pairplot --hue species --format png | viu -
 ```
 
-Note: SVG images may not be displayed correctly.
+Note:
+* SVG images may not be displayed correctly. 
+* viu + [kitty](https://github.com/kovidgoyal/kitty) terminal will work even if you are accessing it via ssh.
 
 ## Contributing
 
