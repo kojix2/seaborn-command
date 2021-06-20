@@ -1,3 +1,5 @@
+# seaborn command line tool
+
 import argparse
 import sys
 import pandas as pd
@@ -8,9 +10,14 @@ import seaborn
 def parse_seaborn_args(args):
     seaborn_args = {}
     for arg in args:
+        # long option
         if arg.startswith("--"):
             opt = arg[2:]
+        # Single hyphens can also be used.
+        elif arg.startswith("-"):
+            opt = arg[1:]
         else:
+            # No value will be ignored.
             seaborn_args[opt] = arg
     return seaborn_args
 
