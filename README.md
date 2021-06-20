@@ -28,7 +28,7 @@ cat iris.tsv | seaborn pairplot --hue species --show
 Input csv file
 
 ```
-cat iris.tsv | seaborn pairplot -d, --hue species --show
+cat iris.csv | seaborn pairplot -d, --hue species --show
 ```
 
 Save image to a file

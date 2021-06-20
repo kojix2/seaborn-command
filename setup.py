@@ -8,6 +8,7 @@ setup(
     version="0.0.3",
     description="seaborn command line tool",
     long_description=long_description,
+    long_description_content_type=”text/markdown”,
     author="kojix2",
     author_email="2xijok@gmail.com",
     install_requires=["seaborn", "pandas"],
