@@ -23,7 +23,7 @@ def parse_seaborn_args(args):
 
 
 def main():
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(usage='%(prog)s <command> [options]')
     parser.add_argument("plot", help="subcommand")
     parser.add_argument("-d", "--delimiter", help="delimiter", default="\t")
     parser.add_argument("-H", "--header", nargs='?', help="input has a header row", type=int, const=0)
