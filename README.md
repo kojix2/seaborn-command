@@ -28,7 +28,7 @@ cat iris.tsv | seaborn pairplot --hue species --show
 Input csv file
 
 ```
-cat iris.csv | seaborn pairplot -d, --hue species --show
+cat iris.csv | seaborn pairplot -H -d, --hue species --show
 ```
 
 Save image to a file
@@ -39,6 +39,7 @@ cat iris.tsv | seaborn pairplot --hue species --format png > result.png
 
 * common options
   * `-d` : delimiter (default tab)
+  * `-t` : transpose
   * `--show` : show the GUI window. No output to STDOUT.
   * `--format` : output format of the image (default svg)
 
@@ -63,6 +64,6 @@ Note: SVG images may not be displayed correctly.
 * Try this command!
 * Pull requests are welcome!
 
-## LICENSE
+## License
 
 MIT
