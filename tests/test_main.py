@@ -21,11 +21,20 @@ class TestMain(unittest.TestCase):
     #     # procedures after every tests are finished. This code block is executed every time
     #     pass
 
-    def test_parse_seaborn_args(self):
+    def test_parse_seaborn_args_long(self):
         expected = {"hue": "species"}
         actual = seaborn_command.main.parse_seaborn_args(["--hue", "species"])
         self.assertEqual(expected, actual)
 
+    def test_parse_seaborn_args_short(self):
+        expected = {"hue": "species"}
+        actual = seaborn_command.main.parse_seaborn_args(["-hue", "species"])
+        self.assertEqual(expected, actual)
+
+    def test_parse_seaborn_args_novalue(self):
+        expected = {"hue": "species"}
+        actual = seaborn_command.main.parse_seaborn_args(["-kitty", "-hue", "species", "--puppy"])
+        self.assertEqual(expected, actual)
 
 if __name__ == "__main__":
     unittest.main()
