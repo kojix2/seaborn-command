@@ -26,10 +26,22 @@ def main():
     parser = argparse.ArgumentParser(usage='%(prog)s <command> [options]')
     parser.add_argument("plot", help="subcommand")
     parser.add_argument("-d", "--delimiter", help="delimiter", default="\t")
-    parser.add_argument("-H", "--header", nargs='?', help="input has a header row", type=int, const=0)
+    parser.add_argument(
+        "-H",
+        "--header",
+        nargs='?',
+        help="input has a header row",
+        type=int,
+        const=0)
     parser.add_argument("-T", "--transpose", action="store_true")
-    parser.add_argument("--format", help="outout image file format", default="svg")
-    parser.add_argument("--debug", help="print seaborn args", action="store_true")
+    parser.add_argument(
+        "--format",
+        help="outout image file format",
+        default="svg")
+    parser.add_argument(
+        "--debug",
+        help="print seaborn args",
+        action="store_true")
     args, unknown_args = parser.parse_known_args()
 
     seaborn_args = parse_seaborn_args(unknown_args)
@@ -45,7 +57,7 @@ def main():
 
     # seaborn --x 1 --y 2
     df.columns = df.columns.astype(str)
-    
+
     # transpose
     if args.transpose:
         df = df.transpose
