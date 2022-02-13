@@ -71,6 +71,12 @@ Note:
 * Try this command!
 * Pull requests are welcome!
 
+```
+Do you need commit rights to my repository?
+Do you want to get admin rights and take over the project?
+If so, please feel free to contact @kojix2.
+```
+
 ## License
 
 MIT
